@@ -1,0 +1,12 @@
+# Bundle patch for @local/dsh-skill-cwd.
+#
+# DSH's filesystem skill provider derives the project root from the nearest
+# `.git` ancestor. Home-repo entries (agent-home/coding, agent-home/review) are
+# not git roots, so their .agents/skills bundles are never scanned. This bundle
+# mounts a provider that adds the session cwd's own skill roots.
+#
+# `name` must equal the installed package name, or the loader only warns and
+# skips the row.
+- insert:
+    - id: skill-cwd
+      name: '@local/dsh-skill-cwd'

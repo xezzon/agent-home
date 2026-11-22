@@ -1,0 +1,20 @@
+{
+  "name": "@local/dsh-skill-cwd",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Adds the session working directory's own .agents/skills and .dsh/skills roots to the DSH skill catalog.",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
