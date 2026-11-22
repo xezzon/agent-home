@@ -9,7 +9,7 @@
 | `coding/` | 功能实现、缺陷修复 |
 | `review/` | 代码审查，只读 |
 
-每个入口都是独立的 home-repo 工作区，有自己的 `AGENTS.md`。会话从入口目录启动，只加载该入口的配置：
+**入口即独立 Home Repo。** 这是本仓库对 [Home Repo 模式](docs/the-home-repo-pattern.md) 的有意偏离：标准做法是一个 Home Repo、会话从仓库根目录启动；本仓库按职责拆成多个入口，每个入口各自是一个 Home Repo，持有自己的 `AGENTS.md`、技能和 `repos/`，会话从入口目录启动，并且只加载该入口的配置：
 
 ```sh
 cd coding
